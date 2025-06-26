@@ -18,7 +18,7 @@ add_action('template_redirect', function () {
     $dailyLimit = get_option('ddl_daily_limit', 20);
 
     if (!DownloadLimiter::can_download($user_id)) {
-      wp_die("⛔ You’ve reached your daily download limit ($dailyLimit). Please try again tomorrow.");
+      wp_die("⛔ You’ve reached your daily download limit of $dailyLimit documents. Please try again tomorrow.");
     }
 
     // Log the download
